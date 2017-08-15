@@ -51,3 +51,6 @@ $string['setting_resetusertours_desc'] = 'With this setting you can place a Font
 Please note: <br/>
 As there is no even vaguely fitting icon in the Moodle core, we have no fallback for themes that do not implement Font Awesome (from Moodle 3.3 onwards this will be integrated into Moodle core). If you use such a theme this setting will have no affect.';
 $string['resetusertours_hint'] = '(Could take a short time)';
+// Setting to change the displaying of the global search within the navbar.
+$string['setting_changeglobalsearch'] = 'Global search field';
+$string['setting_changeglobalsearch_desc'] = 'With this setting you can expand the global search form by default and it will stay opened (while in Moodle core this field will collapse and expand on each mouseover). Moreover, a solution for small screens is provided, by simply showing the search icon and openeing a seperate search field beneath the navbar.';

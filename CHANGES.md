@@ -4,6 +4,10 @@ moodle-local_navbarplus
 Changes
 -------
 
+### Unreleased
+
+* 2017-08-15 - Setting to improve global search field displaying.
+
 ### Release v3.2-r5
 
 * 2017-08-11 - Fixed string in lang package.

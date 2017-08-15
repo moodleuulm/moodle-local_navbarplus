@@ -4,7 +4,37 @@ header.navbar .localnavbarplus.nav-link {
     margin-left: 0;
     padding-right: 10px;
 }
+
 /* Do not display the icon if a user has disabled Javascript in his browser. */
 body:not(.jsenabled) #local_navbarplus_resetusertour {
     display: none;
+}
+#localnavbarplus_globalsearch input {
+    width: 180px;
+}
+
+/* Styling the global serach field for displaying on small screens. */
+/* Inrease padding to the navbar. */
+.container-fluid.navbar-nav.search-on-small-screens {
+    background: #ddd; /* A light gray. */
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    margin-top: 8px;
+    margin-right: -1.5rem;
+    margin-left: -1.5rem;
+}
+
+.search-on-small-screens .nav-link.search-input-wrapper.expanded,
+.search-on-small-screens .nav-link.search-input-wrapper.expanded > form > input,
+.search-on-large-screens .nav-link.search-input-wrapper.expanded > form > input{
+    width: 100%;
+}
+
+.search-on-small-screens .nav-link.search-input-wrapper.expanded > form {
+    margin-left: 2rem;
+    display: block;
+}
+
+.search-on-large-screens .nav-link.search-input-wrapper.expanded > form {
+    margin-left: 0;
 }

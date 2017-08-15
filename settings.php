@@ -43,7 +43,13 @@ if ($hassiteconfig) {
         $title = get_string('setting_resetusertours', 'local_navbarplus', null, true);
         $description = get_string('setting_resetusertours_desc', 'local_navbarplus', null, true);
         $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
+        $page->add($setting);
 
+        // Setting for changing the global search form field.
+        $name = 'local_navbarplus/changeglobalsearch';
+        $title = get_string('setting_changeglobalsearch', 'local_navbarplus', null, true);
+        $description = get_string('setting_changeglobalsearch_desc', 'local_navbarplus', null, true);
+        $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
         $page->add($setting);
     }
 

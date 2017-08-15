@@ -36,7 +36,7 @@ After installing local_navbarplus, the plugin does not do anything to Moodle yet
 To configure the plugin and its behaviour, please visit:
 Site administration -> Appearance -> Navbar Plus.
 
-There, you find two settings:
+There, you find three settings:
 
 ### 1. Icons with links
 
@@ -65,6 +65,10 @@ With this setting you can place a Font Awesome map icon in the navbar with which
 
 Please note:
 As there is no even vaguely fitting icon in the Moodle core, we have no fallback for themes that do not implement Font Awesome (from Moodle 3.3 onwards this will be integrated into Moodle core). If you use such a theme this setting will have no affect.
+
+### 3. Global search field
+
+With this setting you can expand the global search form by default and it will stay opened (while in Moodle core this field will collapse and expand on each mouseover). Moreover, a solution for small screens is provided, by simply showing the search icon and openeing a seperate search field beneath the navbar.
 
 How this plugin works / Pitfalls
 --------------------------------

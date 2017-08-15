@@ -32,7 +32,7 @@ defined('MOODLE_INTERNAL') || die();
  * @return string HTML for the navbar
  */
 function local_navbarplus_render_navbar_output() {
-    global $OUTPUT;
+    global $OUTPUT, $CFG, $PAGE;
 
     // Fetch overall config.
     $config = get_config('local_navbarplus');
@@ -133,7 +133,7 @@ function local_navbarplus_render_navbar_output() {
             $output .= html_writer::end_tag('div');
         }
     }
-    // If setting resetuseertours is enabled.
+    // If setting resetusertours is enabled.
     if (isset($config->resetusertours)) {
         if (isloggedin() || !isguestuser()) {
             // Get the tour for the current page.
@@ -157,5 +157,22 @@ function local_navbarplus_render_navbar_output() {
             }
         }
     }
+    // If setting changeglobalsearch is enabled, then display search form always open and provide a solution for small screens.
+    if (isset($config->changeglobalsearch)) {
+        // Require our globalsearch javascript.
+        $PAGE->requires->js_call_amd('local_navbarplus/globalsearch', 'init');
+        // Open div.
+        $output .= html_writer::start_tag('div', array('class' => 'localnavbarplus nav-link search'));
+        $itemurl = $CFG->wwwroot . '/search/index.php';
+        // Use the Moodle search icon.
+        $itemicon = html_writer::tag('div', $OUTPUT->pix_icon('a/search', get_string('search', 'search'), 'moodle'),
+            array('role' => 'button', 'tabindex' => 0, 'id' => 'localnavbarplus-search'));
+        $attributes = array('title' => get_string('search', 'moodle'));
+        // Add the link to the HTML.
+        $output .= html_writer::link($itemurl, $itemicon, $attributes);
+        // Close div.
+        $output .= html_writer::end_tag('div');
+    }
+
     return $output;
 }
